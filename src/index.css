@@ -1,13 +1,59 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:where(.css-dev-only-do-not-override-acm2ia).ant-menu-inline.ant-menu-root
+  .ant-menu-item
+  > .ant-menu-title-content,
+:where(.css-dev-only-do-not-override-acm2ia).ant-menu-inline.ant-menu-root
+  .ant-menu-submenu-title
+  > .ant-menu-title-content {
+  flex: inherit;
+}
+:where(.css-dev-only-do-not-override-acm2ia).ant-col-4 {
+  max-width: 14.666667%;
+}
+h2:where(.css-dev-only-do-not-override-acm2ia).ant-typography {
+  margin-bottom: 0px !important;
+}
+
+:where(.css-dev-only-do-not-override-acm2ia).ant-list .ant-list-item {
+  display: flex;
+  align-items: center;
+  /* justify-content: ; */
+  padding: 0 !important;
+  color: rgba(0, 0, 0, 0.88);
+}
+:where(.css-dev-only-do-not-override-acm2ia).ant-list-split .ant-list-item {
+  border-block-end: none;
+}
+ul.ant-list-items {
+  align-items: center !important;
+}
+li.ant-list-item {
+  background-color: red;
+  margin-bottom: 20px !important;
+}
+
+:where(.css-dev-only-do-not-override-acm2ia).ant-menu-light:not(
+    .ant-menu-horizontal
+  )
+  .ant-menu-item:not(.ant-menu-item-selected):hover {
+  background-color: red;
+}
+
+:where(.css-dev-only-do-not-override-acm2ia).ant-menu-light:not(
+    .ant-menu-horizontal
+  )
+  .ant-menu-item-selected {
+  background-color: black;
+  color: white;
+}
+li.ant-menu-item {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
