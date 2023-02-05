@@ -1,7 +1,15 @@
 import React from "react";
 import { Typography } from "antd";
-import { Card, Col, Row, Statistic } from "antd";
-import { ArrowDownOutlined, BarChartOutlined } from "@ant-design/icons";
+import { Card, Col, Row } from "antd";
+import {
+  ArrowDownOutlined,
+  BarChartOutlined,
+  CalendarFilled,
+  CalendarOutlined,
+  DatabaseOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from "@ant-design/icons";
 const { Title, Paragraph } = Typography;
 export const HeaderComponent = () => {
   return (
@@ -25,18 +33,18 @@ export const HeaderComponent = () => {
                 style={{
                   background: "black",
                   fontSize: "25px",
-                  padding: "5px 10px",
+                  padding: "10px 15px",
                   borderRadius: "50%",
                   color: "white",
                   boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <BarChartOutlined />
+                <CalendarOutlined />
               </Typography>
               <Col>
                 <Col
                   style={{
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                   }}
                 >
@@ -61,26 +69,26 @@ export const HeaderComponent = () => {
             >
               <Typography
                 style={{
-                  background: "black",
+                  background: "#FF717F",
                   fontSize: "25px",
-                  padding: "5px 10px",
+                  padding: "10px 15px",
                   borderRadius: "50%",
                   color: "white",
                   boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <BarChartOutlined />
+                <UserOutlined />
               </Typography>
               <Col>
                 <Col
                   style={{
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                   }}
                 >
-                  24.4k
+                  163.4k
                 </Col>
-                <Col>Appointment</Col>
+                <Col>Total Patient</Col>
               </Col>
             </Col>
           </Card>
@@ -101,24 +109,24 @@ export const HeaderComponent = () => {
                 style={{
                   background: "black",
                   fontSize: "25px",
-                  padding: "5px 10px",
+                  padding: "10px 15px",
                   borderRadius: "50%",
                   color: "white",
                   boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <BarChartOutlined />
+                <DatabaseOutlined />
               </Typography>
               <Col>
                 <Col
                   style={{
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                   }}
                 >
-                  24.4k
+                  53.4k
                 </Col>
-                <Col>Appointment</Col>
+                <Col>Clinic Consulting</Col>
               </Col>
             </Col>
           </Card>
@@ -139,24 +147,24 @@ export const HeaderComponent = () => {
                 style={{
                   background: "black",
                   fontSize: "25px",
-                  padding: "5px 10px",
+                  padding: "10px 15px",
                   borderRadius: "50%",
                   color: "white",
                   boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <BarChartOutlined />
+                <VideoCameraOutlined />
               </Typography>
               <Col>
                 <Col
                   style={{
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                   }}
                 >
-                  24.4k
+                  28.2k
                 </Col>
-                <Col>Appointment</Col>
+                <Col>Video Consulting</Col>
               </Col>
             </Col>
           </Card>

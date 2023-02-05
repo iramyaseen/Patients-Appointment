@@ -7,7 +7,7 @@ import personImageFourth from "../assets/4.jpg";
 import personImageFifth from "../assets/5.jpg";
 import personImageSixth from "../assets/7.jpg";
 import { Container } from "react-bootstrap";
-const TodayAppointment = () => {
+const AppointmentRequest = () => {
   const data = [
     {
       id: "1",
@@ -21,14 +21,14 @@ const TodayAppointment = () => {
       image: personImageSecond,
       title: "Cano",
       description: "14 Male, 12 April 9:30",
-      actionButtonName: "Declined",
+      actionButtonName: "Confirmed",
     },
     {
       id: "3",
       image: personImageThird,
       title: "Gómez",
       description: "14 Male, 12 April 9:30",
-      actionButtonName: "Declined",
+      actionButtonName: "Confirmed",
     },
     {
       id: "4",
@@ -59,7 +59,6 @@ const TodayAppointment = () => {
       actionButtonName: "Declined",
     },
   ];
-
   return (
     <Container>
       {data.map((data, index) => {
@@ -85,4 +84,4 @@ const TodayAppointment = () => {
     </Container>
   );
 };
-export default TodayAppointment;
+export default AppointmentRequest;

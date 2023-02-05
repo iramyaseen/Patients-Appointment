@@ -35,7 +35,7 @@ ul.ant-list-items {
   align-items: center !important;
 }
 li.ant-list-item {
-  background-color: red;
+  /* background-color: red; */
   margin-bottom: 20px !important;
 }
 
@@ -43,17 +43,223 @@ li.ant-list-item {
     .ant-menu-horizontal
   )
   .ant-menu-item:not(.ant-menu-item-selected):hover {
-  background-color: red;
+  /* background-color: red; */
 }
 
 :where(.css-dev-only-do-not-override-acm2ia).ant-menu-light:not(
     .ant-menu-horizontal
   )
   .ant-menu-item-selected {
-  background-color: black;
+  background-color: black !important;
   color: white;
 }
 li.ant-menu-item {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+:where(.css-dev-only-do-not-override-acm2ia).ant-avatar {
+  width: 50px;
+  height: 50px;
+}
+ul.ant-list-item-action {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  background-color: #feeeef !important;
+  border-radius: 5px !important;
+}
+
+ul.ant-list-item-action li a {
+  color: #e75765 !important;
+}
+
+.ant-col.ant-col-8.css-dev-only-do-not-override-acm2ia {
+  background: #ffffff !important;
+  padding: 20px 10px;
+
+  border-radius: 7px;
+}
+
+:where(.css-dev-only-do-not-override-acm2ia).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th,
+:where(.css-dev-only-do-not-override-acm2ia).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td {
+  background-color: #ebeff2;
+  border-radius: 0px !important;
+  margin-bottom: 30px;
+}
+
+th.ant-table-cell {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #656871 !important;
+}
+
+:where(.css-dev-only-do-not-override-acm2ia).ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr:first-child
+  > td,
+:where(.css-dev-only-do-not-override-acm2ia).ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr.ant-table-measure-row
+  + tr
+  > td {
+  width: 18%;
+}
+
+button.ant-btn.css-dev-only-do-not-override-acm2ia.ant-btn-default {
+  background-color: #6961dd;
+  color: white;
+  padding: 21px 20px;
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+}
+.icon-container {
+  position: relative;
+  padding-top: 9px !important;
+}
+.up-angle-icon {
+  transform: rotate(180deg);
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+.drop-down-btn {
+  background-color: white !important;
+}
+
+.form-container {
+  width: 100%;
+}
+
+/* Popup style */
+.popup-box {
+  position: absolute;
+  padding: 30px;
+  z-index: 1;
+  background-color: white;
+  left: 0;
+  right: 0;
+  top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* .popup-box {
+  background: #00000050;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+ */
+.close-icon {
+  content: "x";
+  cursor: pointer;
+  position: fixed;
+  right: 22%;
+  top: 26%;
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+.save-btn,
+.cancel-btn {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+}
+.save-btn {
+  margin-right: 40px;
+  background-color: #6d64e5;
+}
+.save-btn:hover {
+  background-color: #6d64e5 !important;
+}
+.cancel-btn:hover {
+  background-color: white !important;
+  color: black !important;
+}
+.cancel-btn {
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  color: black;
+}
+
+.patient-input {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding-right: 15px;
+  width: 290px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+}
+.patient-input input {
+  border: none;
+}
+
+.action-btn-name {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  background-color: #feeeef !important;
+  border-radius: 5px !important;
+  color: #e75765 !important;
+}
+
+.list-items-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.list-item-name {
+  font-weight: bold;
+}
+.list-item-des {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+}
+.date-btn {
+  background-color: white;
+  color: black;
+  width: 35%;
+  height: 40px;
+}
+.date-btn:hover {
+  background-color: white !important;
+  color: black !important;
 }

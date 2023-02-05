@@ -1,41 +1,55 @@
 import React from "react";
-import { ReactComponent as OverviewIcon } from "../assets/svg/overview_icon.svg";
-import { ReactComponent as AppointmentIcons } from "../assets/svg/appointment.svg";
+import { useNavigate } from "react-router-dom";
 import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
+  CalendarOutlined,
+  InsertRowAboveOutlined,
+  MessageOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import logoImage from "../assets/Logo.png";
-const { Footer, Content } = Layout;
 const { Sider } = Layout;
-const name = [
-  "Overview",
-  "Appointment",
-  "My Pateints",
-  "Schedule Timings",
-  "Payments",
-  "Message",
-  "Blog",
-  "Setting",
-].map((items) => items);
-const items = [
-  OverviewIcon,
-  UploadOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  TeamOutlined,
-  ShopOutlined,
-].map((icon, index) => ({
-  icon: React.createElement(icon),
-  label: name[index + 0],
-}));
+
+const menuItmes = [
+  { key: "overview", label: "Overview", icon: <InsertRowAboveOutlined /> },
+  { key: "Appointment", label: "Appointment", icon: <CalendarOutlined /> },
+  { key: "My Pateints", label: "My Pateints", icon: <UserOutlined /> },
+
+  {
+    key: "Message",
+    label: "Message",
+    icon: <MessageOutlined />,
+  },
+];
+// const items = [
+//   OverviewIcon,
+//   UploadOutlined,
+//   BarChartOutlined,
+//   CloudOutlined,
+//   AppstoreOutlined,
+//   TeamOutlined,
+//   ShopOutlined,
+// ].map((icon, index) => ({
+//   icon: React.createElement(icon),
+//   label: name[index + 0],
+// }));
+
 const SideBarComponent = () => {
+  const navigate = useNavigate();
+  const clickFun = (e) => {
+    const keyValue = e.key;
+    switch (keyValue) {
+      case "My Pateints":
+        navigate("/patient");
+        break;
+      case "overview":
+        navigate("/");
+        break;
+      default:
+        console.log("Okkk");
+        break;
+    }
+  };
   return (
     <Layout>
       <Sider
@@ -50,7 +64,12 @@ const SideBarComponent = () => {
         }}
       >
         <img src={logoImage} alt="logo" />
-        <Menu mode="inline" defaultSelectedKeys={["4"]} items={items} />
+        <Menu
+          mode="inline"
+          defaultSelectedKeys={["4"]}
+          items={menuItmes}
+          onClick={clickFun}
+        />
       </Sider>
     </Layout>
   );
