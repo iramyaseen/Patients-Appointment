@@ -149,7 +149,7 @@ button.ant-btn.css-dev-only-do-not-override-acm2ia.ant-btn-default {
   background-color: white;
   left: 0;
   right: 0;
-  top: 10%;
+  top: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -163,7 +163,6 @@ button.ant-btn.css-dev-only-do-not-override-acm2ia.ant-btn-default {
   top: 0;
   left: 0;
 }
-
 .box {
   position: relative;
   width: 70%;
@@ -177,7 +176,6 @@ button.ant-btn.css-dev-only-do-not-override-acm2ia.ant-btn-default {
   border: 1px solid #999;
   overflow: auto;
 }
-
  */
 .close-icon {
   content: "x";
@@ -226,7 +224,7 @@ button.ant-btn.css-dev-only-do-not-override-acm2ia.ant-btn-default {
   border: 1px solid #d9d9d9;
   border-radius: 5px;
 }
-.patient-input input {
+.form_item_path input {
   border: none;
 }
 
@@ -262,4 +260,16 @@ button.ant-btn.css-dev-only-do-not-override-acm2ia.ant-btn-default {
 .date-btn:hover {
   background-color: white !important;
   color: black !important;
+}
+.label-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+table td,
+table th {
+  vertical-align: inherit !important;
+}
+:where(.css-dev-only-do-not-override-acm2ia).ant-layout .ant-layout-header {
+  padding-inline: 0px;
 }

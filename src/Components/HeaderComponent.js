@@ -1,10 +1,7 @@
 import React from "react";
-import { Typography } from "antd";
+import { Divider, Typography } from "antd";
 import { Card, Col, Row } from "antd";
 import {
-  ArrowDownOutlined,
-  BarChartOutlined,
-  CalendarFilled,
   CalendarOutlined,
   DatabaseOutlined,
   UserOutlined,
@@ -12,14 +9,18 @@ import {
 } from "@ant-design/icons";
 const { Title, Paragraph } = Typography;
 export const HeaderComponent = () => {
+  const style = {
+    background: "#0092ff",
+    padding: "8px 0",
+  };
   return (
-    <div style={{ padding: "30px 0px" }}>
+    <div style={{ background: "red", width: "100%" }}>
       <Title level={2}>Welcome, Dr.Stephen</Title>
       <Paragraph>Have a nice day at great work</Paragraph>
-      <Row gutter={16}>
-        <Col span={6}>
+      <Row style={{ display: "flex", justifyContent: "space-between" }}>
+        <Col className="gutter-row" span={6}>
           <Card
-            style={{ background: "#7a6efe", display: "flex" }}
+            style={{ background: "#7a6efe", width: "76%" }}
             bordered={false}
           >
             <Col
@@ -27,6 +28,7 @@ export const HeaderComponent = () => {
                 color: "white",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
               <Typography
@@ -55,9 +57,9 @@ export const HeaderComponent = () => {
             </Col>
           </Card>
         </Col>
-        <Col span={6}>
+        <Col className="gutter-row" span={6}>
           <Card
-            style={{ background: "#ff717f", display: "flex" }}
+            style={{ background: "#ff717f", width: "76%" }}
             bordered={false}
           >
             <Col
@@ -65,6 +67,7 @@ export const HeaderComponent = () => {
                 color: "white",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
               <Typography
@@ -93,9 +96,9 @@ export const HeaderComponent = () => {
             </Col>
           </Card>
         </Col>
-        <Col span={6}>
+        <Col className="gutter-row" span={6}>
           <Card
-            style={{ background: "#ffa901", display: "flex" }}
+            style={{ background: "#ffa901", width: "76%" }}
             bordered={false}
           >
             <Col
@@ -103,6 +106,7 @@ export const HeaderComponent = () => {
                 color: "white",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
               <Typography
@@ -131,9 +135,9 @@ export const HeaderComponent = () => {
             </Col>
           </Card>
         </Col>
-        <Col span={6}>
+        <Col className="gutter-row" span={6}>
           <Card
-            style={{ background: "#24a8fa", display: "flex" }}
+            style={{ background: "#24a8fa", width: "76%" }}
             bordered={false}
           >
             <Col
@@ -141,6 +145,7 @@ export const HeaderComponent = () => {
                 color: "white",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
               <Typography

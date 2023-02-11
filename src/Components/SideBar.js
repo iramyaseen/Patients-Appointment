@@ -21,19 +21,6 @@ const menuItmes = [
     icon: <MessageOutlined />,
   },
 ];
-// const items = [
-//   OverviewIcon,
-//   UploadOutlined,
-//   BarChartOutlined,
-//   CloudOutlined,
-//   AppstoreOutlined,
-//   TeamOutlined,
-//   ShopOutlined,
-// ].map((icon, index) => ({
-//   icon: React.createElement(icon),
-//   label: name[index + 0],
-// }));
-
 const SideBarComponent = () => {
   const navigate = useNavigate();
   const clickFun = (e) => {
@@ -54,7 +41,7 @@ const SideBarComponent = () => {
     <Layout>
       <Sider
         style={{
-          background: "white",
+          background: "red",
           overflow: "auto",
           height: "100vh",
           position: "fixed",

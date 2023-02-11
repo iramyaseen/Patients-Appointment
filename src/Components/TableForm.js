@@ -1,36 +1,28 @@
 import React, { useEffect, useState } from "react";
-import image from "../assets/avatar.jpeg";
 import { Avatar, Table, Typography } from "antd";
 import { ActionShowComponent } from "./ActionShow";
-import { formValues, formValueSelector, getFormValues } from "redux-form";
+import { getFormValues } from "redux-form";
 import { connect, useSelector } from "react-redux";
-const today = Date.now();
-const date = new Intl.DateTimeFormat("en-US", {
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-}).format(today);
 const TableForm = ({ numberOfValue }) => {
-  const selector = useSelector((state) => state.cartReducer.numOfItems);
+  var selector = useSelector((state) => state.cartReducer.numOfItems);
   const imageSector = useSelector((state) => state.cartReducer.numOfImages);
-
   const TableData = selector.map((reuxData, index) => ({
-    key: { index },
-    patientID: reuxData.lastName,
+    key: index,
+    PatientsName: reuxData.PatientsName,
+    VisitId: reuxData.VisitId,
+    Date: reuxData.Date,
+    Gender: reuxData.Gender,
+    Diseases: reuxData.Diseases,
+    Payment: reuxData.Payment,
+    Status: "Out-patient",
     name2: imageSector,
-    userName: reuxData.firstName,
-    // date: date,
-    // gender: "Male",
-    // dieases: "Diabetes",
-    // status: "Out-Patiend",
-    // Payment: "Private Cash",
-    // Action: <ActionShowComponent />,
+    Action: <ActionShowComponent />,
   }));
   const column = [
     {
       title: "Patients name",
-      dataIndex: "userName",
-      key: "userName",
+      dataIndex: "PatientsName",
+      key: "PatientsName",
       render: (text, key) => (
         <div
           style={{
@@ -39,12 +31,7 @@ const TableForm = ({ numberOfValue }) => {
           }}
         >
           <Avatar
-            src={
-              <img
-                src={TableData[key.key.index].name2[key.key.index]}
-                alt="avatar"
-              />
-            }
+            src={<img src={TableData[key.key].name2[key.key]} alt="avatar" />}
           />
           <Typography style={{ paddingLeft: "20px" }}>{text}</Typography>
         </div>
@@ -52,28 +39,28 @@ const TableForm = ({ numberOfValue }) => {
     },
     {
       title: "Visit Id",
-      dataIndex: "patientID",
-      key: "patientID",
+      dataIndex: "VisitId",
+      key: "VisitId",
     },
     {
       title: "Date",
-      dataIndex: "date",
-      key: "date",
+      dataIndex: "Date",
+      key: "Date",
     },
     {
       title: "Gender",
-      dataIndex: "gender",
-      key: "gender",
+      dataIndex: "Gender",
+      key: "Gender",
     },
     {
       title: "Diseases",
-      dataIndex: "dieases",
-      key: "dieases",
+      dataIndex: "Diseases",
+      key: "Diseases",
     },
     {
       title: "Status",
-      dataIndex: "status",
-      key: "status",
+      dataIndex: "Status",
+      key: "Status",
     },
     {
       title: "Payment",
@@ -86,7 +73,6 @@ const TableForm = ({ numberOfValue }) => {
       key: "Action",
     },
   ];
-
   return (
     <>
       <Table

@@ -1,10 +1,11 @@
-import { Button, Dropdown, Input } from "antd";
-import React, { useRef, useState } from "react";
+import { Button, Input } from "antd";
+import React from "react";
+import Container from "react-bootstrap/Container";
+
 import { Field, Form, reduxForm } from "redux-form";
 
 const PopupForm = (props) => {
   const { handleSubmit, pristine, reset, submitting, register } = props;
-  const [isOpen, setIsOpen] = useState(false);
   const onChangeHandle = (e) => {
     const files = e.target.files;
     const file = files[0];
@@ -16,7 +17,6 @@ const PopupForm = (props) => {
     arrayofImages = [...arrayofImages, fileString];
     localStorage.setItem("image", JSON.stringify(arrayofImages));
   };
-
   const getBase64 = (file) => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
@@ -24,27 +24,9 @@ const PopupForm = (props) => {
       onLoad(reader.result);
     };
   };
-  // File Input code
-  const adaptFileEventToValue = (delegate) => (e) =>
-    delegate(e.target.files[0]);
-  const FileInput = ({
-    input: { value: omitValue, onChange, onBlur, ...inputProps },
-    meta: omitMeta,
-    ...props
-  }) => {
-    return (
-      <input
-        onChange={adaptFileEventToValue(onChange)}
-        onBlur={adaptFileEventToValue(onBlur)}
-        type="file"
-        {...props.input}
-        {...props}
-      />
-    );
-  };
 
   return (
-    <Form name="form_item_path" layout="vertical" onSubmit={handleSubmit}>
+    <Form name="form_item_path " layout="vertical" onSubmit={handleSubmit}>
       <div
         style={{
           display: "flex",
@@ -53,37 +35,51 @@ const PopupForm = (props) => {
         }}
       >
         <div>
-          <label>First Name</label>
-          <br />
+          <label className="label-name">Patients Name</label>
           <Field
-            name="firstName"
+            name="PatientsName"
             component="input"
             type="text"
             placeholder="Jhone"
-            style={{ height: "47px" }}
+            style={{
+              height: "47px",
+              width: "88%",
+              paddingLeft: "10px",
+              marginTop: "5px",
+            }}
           />
         </div>
         <div>
-          <label>Last Name</label>
-          <br />
+          <label className="label-name">Visit Id </label>
           <Field
-            name="lastName"
+            name="VisitId"
             component="input"
             type="text"
-            placeholder="Martin"
-            style={{ width: "100%", height: "47px" }}
+            placeholder="1231234"
+            style={{
+              width: "100%",
+              height: "47px",
+              paddingLeft: "10px",
+              marginTop: "5px",
+            }}
           />
         </div>
       </div>
       <div style={{ marginBottom: "20px" }}>
-        <label>Location</label>
+        <label className="label-name">Date</label>
         <br />
         <Field
-          name="location"
+          name="Date"
           component="input"
-          type="text"
+          type="date"
           placeholder="3245 Wastheimer Rd. Santa Ans, lllinois 3425"
-          style={{ height: "40px" }}
+          style={{
+            height: "47px",
+            width: "100%",
+            paddingLeft: "10px",
+            paddingRight: "20px",
+            marginTop: "5px",
+          }}
         />
       </div>
       <div
@@ -94,62 +90,72 @@ const PopupForm = (props) => {
         }}
       >
         <div>
-          <label>Patient Email</label>
-          <br />
+          <label className="label-name">Gender</label>
           <Field
-            name="email"
+            name="Gender"
             component="input"
-            type="email"
-            placeholder="info@patient.com"
-            style={{ height: "40px" }}
+            type="text"
+            placeholder="Enter Your Gender"
+            style={{
+              height: "47px",
+              width: "110%",
+              paddingLeft: "10px",
+              marginTop: "5px",
+            }}
           />
         </div>
         <div>
-          <label>Phone Number</label>
-          <br />
-          <div style={{ display: "flex", alignItems: "center" }}>
-            {/* <Dropdown
-              menu={{
-                items,
-              }}
-              placement="bottomLeft"
-            >
-              <Button
-                type="primary"
-                style={{
-                  background: "white",
-                  height: "38px",
-                  color: "black",
-                  border: "1px solid #d9d9d9",
-                  marginRight: "10px",
-                }}
-              >
-                85 <DownOutlined />
-              </Button>
-            </Dropdown> */}
-            <Field
-              name="number"
-              component="input"
-              type="text"
-              placeholder="21453425"
-              style={{ height: "40px" }}
-            />
-          </div>
+          <label className="label-name">Diseases </label>
+          <Field
+            name="Diseases"
+            component="input"
+            type="text"
+            placeholder="Enter Your Diseases Here"
+            style={{
+              width: "100%",
+              height: "47px",
+              paddingLeft: "10px",
+              marginTop: "5px",
+            }}
+          />
         </div>
       </div>
       <div>
-        <label>Reason</label>
+        <label className="label-name">Payment</label>
         <br />
         <Field
-          name="reason"
+          name="Payment"
           component="input"
-          style={{ height: "100px", marginBottom: "20px" }}
+          placeholder="Which Payment Method Your Use"
+          style={{
+            height: "40px",
+            width: "100%",
+            marginBottom: "20px",
+            paddingLeft: "10px",
+            marginTop: "5px",
+          }}
         />
       </div>
-      <label>Image</label>
-      <Input type="file" onChange={onChangeHandle} />
+      <Container style={{ marginBottom: "20px", width: "100%" }}>
+        <label className="label-name">Image</label>
+        <Input
+          style={{
+            paddingLeft: "10px",
+            height: "47px",
+            paddingTop: "11px",
+            marginTop: "5px",
+          }}
+          type="file"
+          onChange={onChangeHandle}
+        />
+      </Container>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Button type="primary" htmlType="submit" className="save-btn">
+        <Button
+          type="primary"
+          htmlType="submit"
+          disabled={pristine || submitting}
+          className="save-btn"
+        >
           Save
         </Button>
         <Button type="primary" htmlType="submit" className="cancel-btn">

@@ -6,7 +6,8 @@ import personImageThird from "../assets/3.jpg";
 import personImageFourth from "../assets/4.jpg";
 import personImageFifth from "../assets/5.jpg";
 import personImageSixth from "../assets/7.jpg";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+
 const TodayAppointment = () => {
   const data = [
     {

@@ -4,7 +4,7 @@ import { Button, Card, Col, Dropdown, Row, Typography } from "antd";
 import TodayAppointment from "./TodayAppointment";
 import PieChart from "./Chart";
 import AppointmentRequest from "./AppointmentRequest";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 
 const items = [
   {

@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Dropdown, Input, Row, Space, Typography } from "antd";
 import { FilterOutlined, PlusOutlined } from "@ant-design/icons";
 import { DownOutlined } from "@ant-design/icons";
 import { FormInputs } from "./FormInputs";
-import Popup from "./Popup";
 import PopupForm from "./PopupForm";
 const items = [
   {
@@ -31,18 +30,20 @@ const items = [
 export const PatientsList = () => {
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
+
   const handleMenuClick = (e) => {
     setValue(e.key);
   };
+  const [formValue, setFormValue] = useState();
   const ProfilehandleSubmit = (form) => {
+    setFormValue(form);
     let localStorageDate = localStorage.getItem("state");
     let data2 = JSON.parse(localStorageDate);
-    data2 = [...data2, form];
-    localStorage.setItem("state", JSON.stringify(data2));
+    data2 = [...data2, formValue];
+    localStorage.setItem("state", JSON.stringify([formValue]));
   };
   const menuProps = {
     items,
@@ -67,7 +68,9 @@ export const PatientsList = () => {
           Add Pateint
         </Button>
         {isOpen && (
-          <Popup content={<PopupForm onSubmit={ProfilehandleSubmit} />} />
+          <div className="popup-box">
+            <PopupForm onSubmit={ProfilehandleSubmit} />
+          </div>
         )}
       </Row>
       <Row
